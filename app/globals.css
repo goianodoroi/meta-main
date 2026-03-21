@@ -1,0 +1,114 @@
+/* ─── Optimistic Display — Meta/Facebook display font ─── */
+@font-face {
+  font-family: 'Optimistic Display';
+  src: url('https://static.xx.fbcdn.net/rsrc.php/v3/y7/r/lW9k8SBN8h2.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Optimistic Display';
+  src: url('https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/E72WOKeoQHt.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Optimistic Display';
+  src: url('https://static.xx.fbcdn.net/rsrc.php/v3/yI/r/gJCPpX1g7iL.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── Tailwind ─── */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Base ─── */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-surface text-text-1 font-sans;
+    margin: 0;
+    padding: 0;
+  }
+
+  img,
+  video {
+    max-width: 100%;
+    display: block;
+  }
+}
+
+/* ─── Hero CSS Animations ─── */
+@layer utilities {
+  @keyframes heroFadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes heroVideoFade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  /* Animações ativas apenas para quem não solicitou movimento reduzido */
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-video-enter {
+      animation: heroVideoFade 1.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+    .hero-item-1 {
+      opacity: 0;
+      animation: heroFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.05s forwards;
+    }
+    .hero-item-2 {
+      opacity: 0;
+      animation: heroFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.18s forwards;
+    }
+    .hero-item-3 {
+      opacity: 0;
+      animation: heroFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.31s forwards;
+    }
+    .hero-item-4 {
+      opacity: 0;
+      animation: heroFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.44s forwards;
+    }
+
+    /* Cards de features — stagger via CSS */
+    .card-enter-1 {
+      opacity: 0;
+      animation: heroFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+    }
+    .card-enter-2 {
+      opacity: 0;
+      animation: heroFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.22s forwards;
+    }
+    .card-enter-3 {
+      opacity: 0;
+      animation: heroFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.34s forwards;
+    }
+    .card-enter-4 {
+      opacity: 0;
+      animation: heroFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.46s forwards;
+    }
+  }
+}

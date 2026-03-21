@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest . --typescript --tailwind --app --no-src-dir --import-alias \"@/*\" --yes)",
+      "Bash(npm install:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(npx tsc:*)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(ls \"/Users/marcosviniciuscostaviana/oculosmeta/public/images/modelos/Headliner \\(Gen 2\\)/Cinza asteroide brilhante Transparentes a Esmeralda/\")",
+      "Bash(while read:*)",
+      "Bash(do echo:*)",
+      "Bash(done done:*)",
+      "Bash(unzip -l \"Óculos_e_óculos_de_sol_Ray-Ban_Meta_Headliner_Gen_2___Meta_Store_\\(pt-BR\\).zip\")",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
+    ]
+  }
+}
