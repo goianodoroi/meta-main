@@ -19,7 +19,7 @@ const sizeGuide = [
     name: 'Oakley Meta HSTN (standard)',
     specs: [
       ['Hinge to hinge', '133 mm'], ['Lens height', '43 mm'],
-      ['Lens width', '49 mm'],      ['Bridge width', '23 mm'],
+      ['Lens width', '49 mm'], ['Bridge width', '23 mm'],
       ['Temple length', '145 mm'],
     ],
   },
@@ -27,14 +27,14 @@ const sizeGuide = [
     name: 'Oakley Meta Vanguard',
     specs: [
       ['Hinge to hinge', '136 mm'], ['Lens height', '53 mm'],
-      ['Lens width', '152 mm'],     ['Temple length', '120 mm'],
+      ['Lens width', '152 mm'], ['Temple length', '120 mm'],
     ],
   },
   {
     name: 'Ray-Ban Meta Wayfarer (standard)',
     specs: [
       ['Hinge to hinge', '131 mm'], ['Lens height', '41 mm'],
-      ['Lens width', '50 mm'],      ['Bridge width', '22 mm'],
+      ['Lens width', '50 mm'], ['Bridge width', '22 mm'],
       ['Temple length', '150 mm'],
     ],
   },
@@ -42,7 +42,7 @@ const sizeGuide = [
     name: 'Ray-Ban Meta Wayfarer (large)',
     specs: [
       ['Hinge to hinge', '137 mm'], ['Lens height', '44 mm'],
-      ['Lens width', '53 mm'],      ['Bridge width', '22 mm'],
+      ['Lens width', '53 mm'], ['Bridge width', '22 mm'],
       ['Temple length', '155 mm'],
     ],
   },
@@ -50,7 +50,7 @@ const sizeGuide = [
     name: 'Ray-Ban Meta Headliner (LBF)',
     specs: [
       ['Hinge to hinge', '134 mm'], ['Lens height', '44 mm'],
-      ['Lens width', '51 mm'],      ['Bridge width', '23 mm'],
+      ['Lens width', '51 mm'], ['Bridge width', '23 mm'],
       ['Temple length', '150 mm'],
     ],
   },
@@ -58,7 +58,7 @@ const sizeGuide = [
     name: 'Ray-Ban Meta Headliner (HBF)',
     specs: [
       ['Hinge to hinge', '132 mm'], ['Lens height', '43 mm'],
-      ['Lens width', '50 mm'],      ['Bridge width', '23 mm'],
+      ['Lens width', '50 mm'], ['Bridge width', '23 mm'],
       ['Temple length', '150 mm'],
     ],
   },
@@ -66,7 +66,7 @@ const sizeGuide = [
     name: 'Ray-Ban Meta Skyler (standard)',
     specs: [
       ['Hinge to hinge', '133 mm'], ['Lens height', '42 mm'],
-      ['Lens width', '52 mm'],      ['Bridge width', '20 mm'],
+      ['Lens width', '52 mm'], ['Bridge width', '20 mm'],
       ['Temple length', '150 mm'],
     ],
   },
@@ -74,7 +74,7 @@ const sizeGuide = [
     name: 'Meta Ray-Ban Display (standard)',
     specs: [
       ['Hinge to hinge', '144 mm'], ['Lens height', '40 mm'],
-      ['Lens width', '47 mm'],      ['Bridge width', '23 mm'],
+      ['Lens width', '47 mm'], ['Bridge width', '23 mm'],
       ['Temple length', '129 mm'],
     ],
   },
@@ -82,7 +82,7 @@ const sizeGuide = [
     name: 'Meta Ray-Ban Display (large)',
     specs: [
       ['Hinge to hinge', '150 mm'], ['Lens height', '40 mm'],
-      ['Lens width', '50 mm'],      ['Bridge width', '23 mm'],
+      ['Lens width', '50 mm'], ['Bridge width', '23 mm'],
       ['Temple length', '135 mm'],
     ],
   },
@@ -128,7 +128,7 @@ function SizeGuideModal({ onClose }: { onClose: () => void }) {
               className="w-8 h-8 rounded-full flex items-center justify-center bg-surface-3 hover:bg-surface text-text-3 hover:text-text-1 transition-colors ml-4 shrink-0"
             >
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/>
+                <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
               </svg>
             </button>
           </div>
@@ -167,7 +167,7 @@ function ColorSwatch({ color, active, onClick }: {
   active: boolean
   onClick: () => void
 }) {
-  const isLight = ['#d8dce8','#d8d8d8','#c0d0e8','#c4b8c0','#e8e8e8','#f0f0f0']
+  const isLight = ['#d8dce8', '#d8d8d8', '#c0d0e8', '#c4b8c0', '#e8e8e8', '#f0f0f0']
     .includes(color.swatch.toLowerCase())
   return (
     <motion.button
@@ -229,7 +229,7 @@ function Accordion({ label, children, onSizeGuide }: {
             width="12" height="12" viewBox="0 0 12 12" fill="none"
             className="text-text-4"
           >
-            <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
           </motion.svg>
         </button>
 
@@ -389,7 +389,7 @@ function ProductCarousel({ images, alt }: { images: string[]; alt: string }) {
               )}
             >
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M9 11L5 7l4-4" stroke="#050505" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M9 11L5 7l4-4" stroke="#050505" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
             <button
@@ -405,7 +405,7 @@ function ProductCarousel({ images, alt }: { images: string[]; alt: string }) {
               )}
             >
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M5 3l4 4-4 4" stroke="#050505" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                <path d="M5 3l4 4-4 4" stroke="#050505" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
           </>
@@ -429,8 +429,8 @@ function ProductCarousel({ images, alt }: { images: string[]; alt: string }) {
               {isVideo(src) ? (
                 <div className="w-full h-full flex items-center justify-center bg-text-1/8">
                   <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                    <circle cx="9" cy="9" r="8.5" stroke="#65676B" strokeWidth="1"/>
-                    <path d="M7 6.5l5 2.5-5 2.5V6.5z" fill="#65676B"/>
+                    <circle cx="9" cy="9" r="8.5" stroke="#65676B" strokeWidth="1" />
+                    <path d="M7 6.5l5 2.5-5 2.5V6.5z" fill="#65676B" />
                   </svg>
                 </div>
               ) : (
@@ -628,9 +628,7 @@ export function ProductConfigurator() {
                 </div>
 
                 <p className="font-sans text-[12px] text-text-4">
-                  Up to{' '}
-                  <strong className="text-text-2 font-semibold">12x of $ 33.16</strong>{' '}
-                  interest-free · Free shipping
+                  <strong className="text-text-2 font-semibold">Last units available</strong> · Free shipping
                 </p>
 
                 <Button
