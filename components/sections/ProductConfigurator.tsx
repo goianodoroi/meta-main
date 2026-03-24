@@ -13,153 +13,7 @@ const genStyle: Record<GenLabel, string> = {
   'Oakley': 'bg-text-1 text-white border border-transparent',
 }
 
-// ─── Guia de tamanhos ─────────────────────────────────────────────────────────
-const sizeGuide = [
-  {
-    name: 'Oakley Meta HSTN (standard)',
-    specs: [
-      ['Hinge to hinge', '133 mm'], ['Lens height', '43 mm'],
-      ['Lens width', '49 mm'], ['Bridge width', '23 mm'],
-      ['Temple length', '145 mm'],
-    ],
-  },
-  {
-    name: 'Oakley Meta Vanguard',
-    specs: [
-      ['Hinge to hinge', '136 mm'], ['Lens height', '53 mm'],
-      ['Lens width', '152 mm'], ['Temple length', '120 mm'],
-    ],
-  },
-  {
-    name: 'Ray-Ban Meta Wayfarer (standard)',
-    specs: [
-      ['Hinge to hinge', '131 mm'], ['Lens height', '41 mm'],
-      ['Lens width', '50 mm'], ['Bridge width', '22 mm'],
-      ['Temple length', '150 mm'],
-    ],
-  },
-  {
-    name: 'Ray-Ban Meta Wayfarer (large)',
-    specs: [
-      ['Hinge to hinge', '137 mm'], ['Lens height', '44 mm'],
-      ['Lens width', '53 mm'], ['Bridge width', '22 mm'],
-      ['Temple length', '155 mm'],
-    ],
-  },
-  {
-    name: 'Ray-Ban Meta Headliner (LBF)',
-    specs: [
-      ['Hinge to hinge', '134 mm'], ['Lens height', '44 mm'],
-      ['Lens width', '51 mm'], ['Bridge width', '23 mm'],
-      ['Temple length', '150 mm'],
-    ],
-  },
-  {
-    name: 'Ray-Ban Meta Headliner (HBF)',
-    specs: [
-      ['Hinge to hinge', '132 mm'], ['Lens height', '43 mm'],
-      ['Lens width', '50 mm'], ['Bridge width', '23 mm'],
-      ['Temple length', '150 mm'],
-    ],
-  },
-  {
-    name: 'Ray-Ban Meta Skyler (standard)',
-    specs: [
-      ['Hinge to hinge', '133 mm'], ['Lens height', '42 mm'],
-      ['Lens width', '52 mm'], ['Bridge width', '20 mm'],
-      ['Temple length', '150 mm'],
-    ],
-  },
-  {
-    name: 'Meta Ray-Ban Display (standard)',
-    specs: [
-      ['Hinge to hinge', '144 mm'], ['Lens height', '40 mm'],
-      ['Lens width', '47 mm'], ['Bridge width', '23 mm'],
-      ['Temple length', '129 mm'],
-    ],
-  },
-  {
-    name: 'Meta Ray-Ban Display (large)',
-    specs: [
-      ['Hinge to hinge', '150 mm'], ['Lens height', '40 mm'],
-      ['Lens width', '50 mm'], ['Bridge width', '23 mm'],
-      ['Temple length', '135 mm'],
-    ],
-  },
-]
 
-// ─── Modal Guia de Tamanhos ───────────────────────────────────────────────────
-function SizeGuideModal({ onClose }: { onClose: () => void }) {
-  return (
-    <AnimatePresence>
-      <motion.div
-        className="fixed inset-0 z-50 flex items-center justify-center p-4"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.2 }}
-        onClick={onClose}
-      >
-        {/* backdrop */}
-        <div className="absolute inset-0 bg-black/30 backdrop-blur-sm" />
-
-        {/* card */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.96, y: 12 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.96, y: 8 }}
-          transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-          className="relative bg-white rounded-20 shadow-xl w-full max-w-lg max-h-[80vh] overflow-hidden flex flex-col"
-          onClick={(e) => e.stopPropagation()}
-        >
-          {/* header */}
-          <div className="flex items-start justify-between px-6 pt-6 pb-4 border-b border-border">
-            <div>
-              <h3 className="font-sans text-lg font-semibold text-text-1 tracking-[-0.01em]">
-                Size guide
-              </h3>
-              <p className="mt-0.5 font-sans text-sm text-text-3">
-                Find the perfect fit for you
-              </p>
-            </div>
-            <button
-              onClick={onClose}
-              aria-label="Close"
-              className="w-8 h-8 rounded-full flex items-center justify-center bg-surface-3 hover:bg-surface text-text-3 hover:text-text-1 transition-colors ml-4 shrink-0"
-            >
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-              </svg>
-            </button>
-          </div>
-
-          {/* content */}
-          <div className="overflow-y-auto px-6 py-4 flex flex-col gap-5">
-            {sizeGuide.map((item) => (
-              <div key={item.name}>
-                <p className="font-sans text-[13px] font-semibold text-text-1 mb-2">{item.name}</p>
-                <div className="rounded-8 border border-border overflow-hidden">
-                  {item.specs.map(([label, value], i) => (
-                    <div
-                      key={label}
-                      className={cn(
-                        'flex justify-between px-3 py-2',
-                        i % 2 === 0 ? 'bg-white' : 'bg-surface-2',
-                      )}
-                    >
-                      <span className="font-sans text-[12px] text-text-3">{label}</span>
-                      <span className="font-sans text-[12px] font-semibold text-text-1">{value}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-      </motion.div>
-    </AnimatePresence>
-  )
-}
 
 // ─── Swatch de cor ────────────────────────────────────────────────────────────
 function ColorSwatch({ color, active, onClick }: {
@@ -186,77 +40,7 @@ function ColorSwatch({ color, active, onClick }: {
   )
 }
 
-// ─── Pill toggle ──────────────────────────────────────────────────────────────
-function PillToggle({ label, active, onClick }: {
-  label: string; active: boolean; onClick: () => void
-}) {
-  return (
-    <motion.button
-      onClick={onClick}
-      whileTap={{ scale: 0.96 }}
-      aria-pressed={active}
-      className={cn(
-        'h-9 px-5 rounded-pill text-sm font-sans font-medium transition-all duration-200',
-        active
-          ? 'bg-text-1 text-white shadow-xs'
-          : 'bg-white border border-border text-text-2 hover:border-border-strong',
-      )}
-    >{label}</motion.button>
-  )
-}
 
-// ─── Acordeão (Tamanho / Ajuste) ─────────────────────────────────────────────
-function Accordion({ label, children, onSizeGuide }: {
-  label: string
-  children: React.ReactNode
-  onSizeGuide: () => void
-}) {
-  const [open, setOpen] = useState(true)
-  return (
-    <div>
-      <div className="flex items-center justify-between mb-0">
-        <button
-          onClick={() => setOpen((v) => !v)}
-          className="flex items-center gap-2 group"
-          aria-expanded={open}
-        >
-          <span className="font-sans text-[11px] font-semibold uppercase tracking-[0.1em] text-text-4 group-hover:text-text-3 transition-colors">
-            {label}
-          </span>
-          <motion.svg
-            animate={{ rotate: open ? 180 : 0 }}
-            transition={{ duration: 0.2, ease: [0.4, 0, 0.2, 1] }}
-            width="12" height="12" viewBox="0 0 12 12" fill="none"
-            className="text-text-4"
-          >
-            <path d="M2 4l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-          </motion.svg>
-        </button>
-
-        <button
-          onClick={onSizeGuide}
-          className="font-sans text-[12px] text-brand hover:text-brand-hover transition-colors font-medium"
-        >
-          Size guide
-        </button>
-      </div>
-
-      <AnimatePresence initial={false}>
-        {open && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
-            style={{ overflow: 'hidden' }}
-          >
-            <div className="pt-3">{children}</div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  )
-}
 
 // ─── Card de modelo ───────────────────────────────────────────────────────────
 function ModelCard({ model, active, onClick }: {
@@ -468,9 +252,7 @@ const DEFAULT_MODEL = 'wayfarer-gen2'
 export function ProductConfigurator() {
   const [selectedId, setSelectedId] = useState(DEFAULT_MODEL)
   const [colorIdx, setColorIdx] = useState(0)
-  const [size, setSize] = useState(() => models.find(m => m.id === DEFAULT_MODEL)!.sizes[0])
-  const [fit, setFit] = useState(() => models.find(m => m.id === DEFAULT_MODEL)!.fits[0])
-  const [showSizeGuide, setShowSizeGuide] = useState(false)
+
   const [customLinks, setCustomLinks] = useState<Record<string, string>>({})
 
   useEffect(() => {
@@ -493,14 +275,11 @@ export function ProductConfigurator() {
     const m = models.find((m) => m.id === id)!
     setSelectedId(id)
     setColorIdx(0)
-    setSize(m.sizes[0])
-    setFit(m.fits[0])
+
   }
 
   return (
     <>
-      {showSizeGuide && <SizeGuideModal onClose={() => setShowSizeGuide(false)} />}
-
       <section id="escolha-modelo" className="bg-white pt-4 pb-12 lg:py-16">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-16">
 
@@ -602,33 +381,7 @@ export function ProductConfigurator() {
                 </div>
               </div>
 
-              {/* Tamanho — acordeão (só se > 1 opção) */}
-              {model.sizes.length > 1 && (
-                <>
-                  <Divider />
-                  <Accordion label="Size" onSizeGuide={() => setShowSizeGuide(true)}>
-                    <div className="flex gap-2 flex-wrap">
-                      {model.sizes.map((s) => (
-                        <PillToggle key={s} label={s} active={size === s} onClick={() => setSize(s)} />
-                      ))}
-                    </div>
-                  </Accordion>
-                </>
-              )}
 
-              {/* Ajuste da armação — acordeão (só se > 1 opção) */}
-              {model.fits.length > 1 && (
-                <>
-                  <Divider />
-                  <Accordion label="Frame fit" onSizeGuide={() => setShowSizeGuide(true)}>
-                    <div className="flex gap-2 flex-wrap">
-                      {model.fits.map((f) => (
-                        <PillToggle key={f} label={f} active={fit === f} onClick={() => setFit(f)} />
-                      ))}
-                    </div>
-                  </Accordion>
-                </>
-              )}
 
               <Divider />
 

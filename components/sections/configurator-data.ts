@@ -19,14 +19,12 @@ export interface GlassesModel {
   tagline: string
   thumb: string
   colors: ColorVariant[]
-  sizes: string[]
-  fits: string[]
   price: string
   originalPrice: string
   checkoutUrl: string
 }
 
-// ─── Dados dos 8 modelos ──────────────────────────────────────────────────────
+// ─── Dados dos 5 modelos ──────────────────────────────────────────────────────
 export const models: GlassesModel[] = [
 
   /* ── 1. Wayfarer Gen 2 ──────────────────────────────────────────────────── */
@@ -36,12 +34,21 @@ export const models: GlassesModel[] = [
     gen: 'Gen 2',
     tagline: 'O ícone reinventado com tecnologia de última geração.',
     thumb: m('Wayfarer (Gen 2)', 'Preto brilhante', '01.webp'),
-    sizes: ['Standard', 'Large'],
-    fits: ['High Bridge'],
-    price: '$ 88.74',
+    price: '$ 87.00',
     originalPrice: '$ 599.00',
     checkoutUrl: 'https://dailyman.shop/cart/53563801502023:1',
     colors: [
+      {
+        name: 'Matte Black',
+        swatch: '#1A1A1A',
+        image: m('Wayfarer (Gen 2)', 'Preto Matte', '01.webp'),
+        images: [
+          m('Wayfarer (Gen 2)', 'Preto Matte', '02.webp'),
+          m('Wayfarer (Gen 2)', 'Preto Matte', '03.webp'),
+          m('Wayfarer (Gen 2)', 'Preto Matte', '04.webp'),
+          m('Wayfarer (Gen 2)', 'Preto Matte', '05.webp'),
+        ],
+      },
       {
         name: 'Glossy Black',
         swatch: '#2A2A2A',
@@ -52,17 +59,6 @@ export const models: GlassesModel[] = [
           m('Wayfarer (Gen 2)', 'Preto brilhante', '04.webp'),
           m('Wayfarer (Gen 2)', 'Preto brilhante', '05.webp'),
           m('Wayfarer (Gen 2)', 'Preto brilhante', '06.webp'),
-        ],
-      },
-      {
-        name: 'Matte Black',
-        swatch: '#1A1A1A',
-        image: m('Wayfarer (Gen 2)', 'Preto Matte', '01.webp'),
-        images: [
-          m('Wayfarer (Gen 2)', 'Preto Matte', '02.webp'),
-          m('Wayfarer (Gen 2)', 'Preto Matte', '03.webp'),
-          m('Wayfarer (Gen 2)', 'Preto Matte', '04.webp'),
-          m('Wayfarer (Gen 2)', 'Preto Matte', '05.webp'),
         ],
       },
       {
@@ -114,109 +110,29 @@ export const models: GlassesModel[] = [
     ],
   },
 
-  /* ── 2. Wayfarer Gen 1 ──────────────────────────────────────────────────── */
-  {
-    id: 'wayfarer-gen1',
-    name: 'Wayfarer',
-    gen: 'Gen 1',
-    tagline: 'O clássico que começou a revolução dos smart glasses.',
-    thumb: m('Wayfarer (Gen 1)', 'Preto brilhante', 'DM_20260320155948_001.WEBP'),
-    sizes: ['Standard', 'Large'],
-    fits: ['High Bridge'],
-    price: '$ 80.99',
-    originalPrice: '$ 599.00',
-    checkoutUrl: 'https://dailyman.shop/cart/53563801534791:1',
-    colors: [
-      {
-        name: 'Glossy Black',
-        swatch: '#2A2A2A',
-        image: m('Wayfarer (Gen 1)', 'Preto brilhante', 'DM_20260320155948_001.WEBP'),
-        images: [
-          m('Wayfarer (Gen 1)', 'Preto brilhante', 'DM_20260320155948_002.WEBP'),
-          m('Wayfarer (Gen 1)', 'Preto brilhante', 'DM_20260320155948_003.WEBP'),
-          m('Wayfarer (Gen 1)', 'Preto brilhante', 'DM_20260320155948_004.WEBP'),
-          m('Wayfarer (Gen 1)', 'Preto brilhante', 'DM_20260320155948_005.WEBP'),
-        ],
-      },
-      {
-        name: 'Glossy Black Green',
-        swatch: '#1A3D1A',
-        image: m('Wayfarer (Gen 1)', 'preto brilhante verde', 'DM_20260320155510_001.webp'),
-        images: [
-          m('Wayfarer (Gen 1)', 'preto brilhante verde', 'DM_20260320155510_002.webp'),
-          m('Wayfarer (Gen 1)', 'preto brilhante verde', 'DM_20260320155510_003.webp'),
-          m('Wayfarer (Gen 1)', 'preto brilhante verde', 'DM_20260320155510_004.webp'),
-          m('Wayfarer (Gen 1)', 'preto brilhante verde', 'DM_20260320155510_005.webp'),
-        ],
-      },
-      {
-        name: 'Matte Black Graphite Gradient',
-        swatch: '#383838',
-        image: m('Wayfarer (Gen 1)', 'preto matte grafite degrade', '01.webp'),
-        images: [
-          m('Wayfarer (Gen 1)', 'preto matte grafite degrade', '02.webp'),
-          m('Wayfarer (Gen 1)', 'preto matte grafite degrade', '03.webp'),
-        ],
-      },
-      {
-        name: 'Matte Black Transitions® Graphite Green',
-        swatch: '#2D402D',
-        image: m('Wayfarer (Gen 1)', 'Preto Matte transparentes a verde grafite', 'DM_20260320155619_001.webp'),
-        images: [
-          m('Wayfarer (Gen 1)', 'Preto Matte transparentes a verde grafite', 'DM_20260320155619_002.webp'),
-          m('Wayfarer (Gen 1)', 'Preto Matte transparentes a verde grafite', 'DM_20260320155619_003.webp'),
-          m('Wayfarer (Gen 1)', 'Preto Matte transparentes a verde grafite', 'DM_20260320155619_004.webp'),
-        ],
-      },
-      {
-        name: 'Glossy Caramel Transparent',
-        swatch: '#C8916A',
-        image: m('Wayfarer (Gen 1)', 'Caramelo brilhante transparente', 'DM_20260320155723_001.WEBP'),
-        images: [
-          m('Wayfarer (Gen 1)', 'Caramelo brilhante transparente', 'DM_20260320155723_002.WEBP'),
-          m('Wayfarer (Gen 1)', 'Caramelo brilhante transparente', 'DM_20260320155723_003.WEBP'),
-          m('Wayfarer (Gen 1)', 'Caramelo brilhante transparente', 'DM_20260320155723_004.WEBP'),
-          m('Wayfarer (Gen 1)', 'Caramelo brilhante transparente', 'DM_20260320155723_005.WEBP'),
-        ],
-      },
-      {
-        name: 'Matte Denim Transparent',
-        swatch: '#4A6A8E',
-        image: m('Wayfarer (Gen 1)', 'Jeans matte transparente', 'DM_20260320155841_001.WEBP'),
-        images: [
-          m('Wayfarer (Gen 1)', 'Jeans matte transparente', 'DM_20260320155841_002.WEBP'),
-          m('Wayfarer (Gen 1)', 'Jeans matte transparente', 'DM_20260320155841_003.WEBP'),
-          m('Wayfarer (Gen 1)', 'Jeans matte transparente', 'DM_20260320155841_004.WEBP'),
-          m('Wayfarer (Gen 1)', 'Jeans matte transparente', 'DM_20260320155841_005.WEBP'),
-        ],
-      },
-      {
-        name: 'Glossy Brown Transparent',
-        swatch: '#7B3A1A',
-        image: m('Wayfarer (Gen 1)', 'Marrom brilhante transparente', 'DM_20260320160054_001.WEBP'),
-        images: [
-          m('Wayfarer (Gen 1)', 'Marrom brilhante transparente', 'DM_20260320160054_002.WEBP'),
-          m('Wayfarer (Gen 1)', 'Marrom brilhante transparente', 'DM_20260320160054_003.WEBP'),
-          m('Wayfarer (Gen 1)', 'Marrom brilhante transparente', 'DM_20260320160054_004.WEBP'),
-          m('Wayfarer (Gen 1)', 'Marrom brilhante transparente', 'DM_20260320160054_005.WEBP'),
-        ],
-      },
-    ],
-  },
-
-  /* ── 3. Skyler Gen 2 ────────────────────────────────────────────────────── */
+  /* ── 2. Skyler Gen 2 ────────────────────────────────────────────────────── */
   {
     id: 'skyler-gen2',
     name: 'Skyler',
     gen: 'Gen 2',
     tagline: 'Design feminino com a mais alta performance.',
     thumb: m('Skyler Gen 2', 'Cinza-esbranquiçado brilhante', 'DM_20260320162858_001.WEBP'),
-    sizes: ['Standard'],
-    fits: ['High Bridge'],
-    price: '$ 119.94',
+    price: '$ 119.00',
     originalPrice: '$ 599.00',
     checkoutUrl: 'https://dailyman.shop/cart/53563801567559:1',
     colors: [
+      {
+        name: 'Glossy Black Clear',
+        swatch: '#2A2A2A',
+        image: m('Skyler Gen 2', 'Preto brilhante clear', 'DM_20260320163009_001.WEBP'),
+        images: [
+          m('Skyler Gen 2', 'Preto brilhante clear', 'DM_20260320163009_002.WEBP'),
+          m('Skyler Gen 2', 'Preto brilhante clear', 'DM_20260320163009_003.WEBP'),
+          m('Skyler Gen 2', 'Preto brilhante clear', 'DM_20260320163009_004.WEBP'),
+          m('Skyler Gen 2', 'Preto brilhante clear', 'DM_20260320163009_005.WEBP'),
+          m('Skyler Gen 2', 'Preto brilhante clear', 'DM_20260320163009_006.WEBP'),
+        ],
+      },
       {
         name: 'Glossy Shiny White',
         swatch: '#B8C8D8',
@@ -237,18 +153,6 @@ export const models: GlassesModel[] = [
           m('Skyler Gen 2', 'Preto Brilhante verde', 'DM_20260320162729_003.WEBP'),
           m('Skyler Gen 2', 'Preto Brilhante verde', 'DM_20260320162729_004.WEBP'),
           m('Skyler Gen 2', 'Preto Brilhante verde', 'DM_20260320162729_005.WEBP'),
-        ],
-      },
-      {
-        name: 'Glossy Black Clear',
-        swatch: '#2A2A2A',
-        image: m('Skyler Gen 2', 'Preto brilhante clear', 'DM_20260320163009_001.WEBP'),
-        images: [
-          m('Skyler Gen 2', 'Preto brilhante clear', 'DM_20260320163009_002.WEBP'),
-          m('Skyler Gen 2', 'Preto brilhante clear', 'DM_20260320163009_003.WEBP'),
-          m('Skyler Gen 2', 'Preto brilhante clear', 'DM_20260320163009_004.WEBP'),
-          m('Skyler Gen 2', 'Preto brilhante clear', 'DM_20260320163009_005.WEBP'),
-          m('Skyler Gen 2', 'Preto brilhante clear', 'DM_20260320163009_006.WEBP'),
         ],
       },
       {
@@ -298,110 +202,17 @@ export const models: GlassesModel[] = [
     ],
   },
 
-  /* ── 4. Skyler Gen 1 ────────────────────────────────────────────────────── */
-  {
-    id: 'skyler-gen1',
-    name: 'Skyler',
-    gen: 'Gen 1',
-    tagline: 'O design que combina estilo e tecnologia.',
-    thumb: m('Skyler Gen 1', 'preto brilhante', 'DM_20260320162431_001.WEBP'),
-    sizes: ['Standard'],
-    fits: ['High Bridge'],
-    price: '$ 101.88',
-    originalPrice: '$ 599.00',
-    checkoutUrl: 'https://dailyman.shop/cart/53563801600327:1',
-    colors: [
-      {
-        name: 'Glossy Black',
-        swatch: '#2A2A2A',
-        image: m('Skyler Gen 1', 'preto brilhante', 'DM_20260320162431_001.WEBP'),
-        images: [
-          m('Skyler Gen 1', 'preto brilhante', 'DM_20260320162431_002.WEBP'),
-          m('Skyler Gen 1', 'preto brilhante', 'DM_20260320162431_003.WEBP'),
-          m('Skyler Gen 1', 'preto brilhante', 'DM_20260320162431_004.WEBP'),
-          m('Skyler Gen 1', 'preto brilhante', 'DM_20260320162431_005.WEBP'),
-        ],
-      },
-      {
-        name: 'Glossy Black Green',
-        swatch: '#1A3D1A',
-        image: m('Skyler Gen 1', 'Preto brilhante verde', 'DM_20260320162356_001.WEBP'),
-        images: [
-          m('Skyler Gen 1', 'Preto brilhante verde', 'DM_20260320162356_002.WEBP'),
-          m('Skyler Gen 1', 'Preto brilhante verde', 'DM_20260320162356_003.WEBP'),
-          m('Skyler Gen 1', 'Preto brilhante verde', 'DM_20260320162356_004.WEBP'),
-        ],
-      },
-      {
-        name: 'Glossy Shiny White',
-        swatch: '#B8C8D8',
-        image: m('Skyler Gen 1', 'Cinza-esbranquiçado brilhante', 'DM_20260320162321_001.WEBP'),
-        images: [
-          m('Skyler Gen 1', 'Cinza-esbranquiçado brilhante', 'DM_20260320162321_002.WEBP'),
-          m('Skyler Gen 1', 'Cinza-esbranquiçado brilhante', 'DM_20260320162321_003.WEBP'),
-          m('Skyler Gen 1', 'Cinza-esbranquiçado brilhante', 'DM_20260320162321_004.WEBP'),
-          m('Skyler Gen 1', 'Cinza-esbranquiçado brilhante', '01.mp4'),
-        ],
-      },
-      {
-        name: 'Shiny White Cinnamon Rose',
-        swatch: '#C4B8C0',
-        image: m('Skyler Gen 1', 'Cinza-esbranquiçado brilhante rosa canela', 'DM_20260320162547_001.WEBP'),
-        images: [
-          m('Skyler Gen 1', 'Cinza-esbranquiçado brilhante rosa canela', 'DM_20260320162547_002.WEBP'),
-          m('Skyler Gen 1', 'Cinza-esbranquiçado brilhante rosa canela', 'DM_20260320162547_003.WEBP'),
-          m('Skyler Gen 1', 'Cinza-esbranquiçado brilhante rosa canela', 'DM_20260320162547_004.WEBP'),
-          m('Skyler Gen 1', 'Cinza-esbranquiçado brilhante rosa canela', 'DM_20260320162547_005.WEBP'),
-        ],
-      },
-      {
-        name: 'Glossy Black Transitions® Amethyst',
-        swatch: '#4A1A6B',
-        image: m('Skyler Gen 1', 'preto brilhante transprantes a ametista', 'DM_20260320162520_001.WEBP'),
-        images: [
-          m('Skyler Gen 1', 'preto brilhante transprantes a ametista', 'DM_20260320162520_002.WEBP'),
-          m('Skyler Gen 1', 'preto brilhante transprantes a ametista', 'DM_20260320162520_003.WEBP'),
-          m('Skyler Gen 1', 'preto brilhante transprantes a ametista', '01.mp4'),
-        ],
-      },
-      {
-        name: 'Glossy Black Cyan Blue',
-        swatch: '#1A3D6B',
-        image: m('Skyler Gen 1', 'Preto brilhante suave a azul ciano', 'DM_20260320162641_001.WEBP'),
-        images: [
-          m('Skyler Gen 1', 'Preto brilhante suave a azul ciano', 'DM_20260320162641_002.WEBP'),
-          m('Skyler Gen 1', 'Preto brilhante suave a azul ciano', 'DM_20260320162641_003.WEBP'),
-          m('Skyler Gen 1', 'Preto brilhante suave a azul ciano', 'DM_20260320162641_004.WEBP'),
-          m('Skyler Gen 1', 'Preto brilhante suave a azul ciano', 'DM_20260320162641_005.WEBP'),
-          m('Skyler Gen 1', 'Preto brilhante suave a azul ciano', '01.mp4'),
-        ],
-      },
-    ],
-  },
-
-  /* ── 5. Headliner Gen 2 ─────────────────────────────────────────────────── */
+  /* ── 3. Headliner Gen 2 ─────────────────────────────────────────────────── */
   {
     id: 'headliner-gen2',
     name: 'Headliner',
     gen: 'Gen 2',
     tagline: 'Oversized icônico com câmera e áudio de nível superior.',
     thumb: m('Headliner (Gen 2)', 'Preto brilhante transparente a safira', 'DM_20260320161505_001.WEBP'),
-    sizes: ['Standard', 'Large'],
-    fits: ['High Bridge', 'Low Bridge'],
-    price: '$ 94.44',
+    price: '$ 95.00',
     originalPrice: '$ 599.00',
     checkoutUrl: 'https://dailyman.shop/cart/53563801633095:1',
     colors: [
-      {
-        name: 'Glossy Black Transparent Sapphire',
-        swatch: '#1A2D5A',
-        image: m('Headliner (Gen 2)', 'Preto brilhante transparente a safira', 'DM_20260320161505_001.WEBP'),
-        images: [
-          m('Headliner (Gen 2)', 'Preto brilhante transparente a safira', 'DM_20260320161505_002.WEBP'),
-          m('Headliner (Gen 2)', 'Preto brilhante transparente a safira', 'DM_20260320161505_003.WEBP'),
-          m('Headliner (Gen 2)', 'Preto brilhante transparente a safira', 'DM_20260320161505_004.WEBP'),
-        ],
-      },
       {
         name: 'Matte Black',
         swatch: '#1A1A1A',
@@ -411,6 +222,16 @@ export const models: GlassesModel[] = [
           m('Headliner (Gen 2)', 'preto matte', 'DM_20260320161229_003.WEBP'),
           m('Headliner (Gen 2)', 'preto matte', 'DM_20260320161229_004.WEBP'),
           m('Headliner (Gen 2)', 'preto matte', 'DM_20260320161229_005.WEBP'),
+        ],
+      },
+      {
+        name: 'Glossy Black Transparent Sapphire',
+        swatch: '#1A2D5A',
+        image: m('Headliner (Gen 2)', 'Preto brilhante transparente a safira', 'DM_20260320161505_001.WEBP'),
+        images: [
+          m('Headliner (Gen 2)', 'Preto brilhante transparente a safira', 'DM_20260320161505_002.WEBP'),
+          m('Headliner (Gen 2)', 'Preto brilhante transparente a safira', 'DM_20260320161505_003.WEBP'),
+          m('Headliner (Gen 2)', 'Preto brilhante transparente a safira', 'DM_20260320161505_004.WEBP'),
         ],
       },
       {
@@ -460,86 +281,14 @@ export const models: GlassesModel[] = [
     ],
   },
 
-  /* ── 6. Headliner Gen 1 ─────────────────────────────────────────────────── */
-  {
-    id: 'headliner-gen1',
-    name: 'Headliner',
-    gen: 'Gen 1',
-    tagline: 'Grande personalidade, presença marcante.',
-    thumb: m('Headliner (Gen 1)', 'Preto brilhante', 'DM_20260320160819_001.WEBP'),
-    sizes: ['Standard'],
-    fits: ['High Bridge', 'Low Bridge'],
-    price: '$ 92.34',
-    originalPrice: '$ 599.00',
-    checkoutUrl: 'https://dailyman.shop/cart/53563801665863:1',
-    colors: [
-      {
-        name: 'Glossy Black',
-        swatch: '#2A2A2A',
-        image: m('Headliner (Gen 1)', 'Preto brilhante', 'DM_20260320160819_001.WEBP'),
-        images: [
-          m('Headliner (Gen 1)', 'Preto brilhante', 'DM_20260320160819_002.WEBP'),
-          m('Headliner (Gen 1)', 'Preto brilhante', 'DM_20260320160819_003.WEBP'),
-          m('Headliner (Gen 1)', 'Preto brilhante', 'DM_20260320160819_004.WEBP'),
-          m('Headliner (Gen 1)', 'Preto brilhante', 'DM_20260320160819_005.WEBP'),
-        ],
-      },
-      {
-        name: 'Glossy Black Transparent Sapphire',
-        swatch: '#1A2D5A',
-        image: m('Headliner (Gen 1)', 'Preto brilhante Transparentes a Safira', 'DM_20260320160520_001.WEBP'),
-        images: [
-          m('Headliner (Gen 1)', 'Preto brilhante Transparentes a Safira', 'DM_20260320160520_002.WEBP'),
-          m('Headliner (Gen 1)', 'Preto brilhante Transparentes a Safira', 'DM_20260320160520_003.WEBP'),
-          m('Headliner (Gen 1)', 'Preto brilhante Transparentes a Safira', 'DM_20260320160520_004.WEBP'),
-        ],
-      },
-      {
-        name: 'Matte Black Charcoal',
-        swatch: '#1E1E1E',
-        image: m('Headliner (Gen 1)', 'Preto Matte Preto carvão', 'DM_20260320160607_001.WEBP'),
-        images: [
-          m('Headliner (Gen 1)', 'Preto Matte Preto carvão', 'DM_20260320160607_002.WEBP'),
-          m('Headliner (Gen 1)', 'Preto Matte Preto carvão', 'DM_20260320160607_003.WEBP'),
-          m('Headliner (Gen 1)', 'Preto Matte Preto carvão', 'DM_20260320160607_004.WEBP'),
-          m('Headliner (Gen 1)', 'Preto Matte Preto carvão', 'DM_20260320160607_005.WEBP'),
-        ],
-      },
-      {
-        name: 'Matte Black Transitions® Gray',
-        swatch: '#3A3A3A',
-        image: m('Headliner (Gen 1)', 'Preto Matte transprarentes a cinza', 'DM_20260320160704_001.WEBP'),
-        images: [
-          m('Headliner (Gen 1)', 'Preto Matte transprarentes a cinza', 'DM_20260320160704_002.WEBP'),
-          m('Headliner (Gen 1)', 'Preto Matte transprarentes a cinza', 'DM_20260320160704_003.WEBP'),
-          m('Headliner (Gen 1)', 'Preto Matte transprarentes a cinza', 'DM_20260320160704_004.WEBP'),
-          m('Headliner (Gen 1)', 'Preto Matte transprarentes a cinza', 'DM_20260320160704_005.WEBP'),
-        ],
-      },
-      {
-        name: 'Glossy Brown Transparent',
-        swatch: '#7B3A1A',
-        image: m('Headliner (Gen 1)', 'Marrom brilhante transparente', 'DM_20260320160757_001.WEBP'),
-        images: [
-          m('Headliner (Gen 1)', 'Marrom brilhante transparente', 'DM_20260320160757_002.WEBP'),
-          m('Headliner (Gen 1)', 'Marrom brilhante transparente', 'DM_20260320160757_003.WEBP'),
-          m('Headliner (Gen 1)', 'Marrom brilhante transparente', 'DM_20260320160757_004.WEBP'),
-          m('Headliner (Gen 1)', 'Marrom brilhante transparente', 'DM_20260320160757_005.WEBP'),
-        ],
-      },
-    ],
-  },
-
-  /* ── 7. Oakley Vanguard ─────────────────────────────────────────────────── */
+  /* ── 4. Oakley Vanguard ─────────────────────────────────────────────────── */
   {
     id: 'oakley-vanguard',
     name: 'Vanguard',
     gen: 'Oakley',
     tagline: 'Performance atlética para o treino de alta intensidade.',
     thumb: m('Vanguard', 'Prizm 24K', 'DM_20260320163950_001.WEBP'),
-    sizes: ['Standard'],
-    fits: ['High Bridge'],
-    price: '$ 179.94',
+    price: '$ 179.00',
     originalPrice: '$ 599.00',
     checkoutUrl: 'https://dailyman.shop/cart/53563801698631:1',
     colors: [
@@ -590,16 +339,14 @@ export const models: GlassesModel[] = [
     ],
   },
 
-  /* ── 8. Oakley HSTN ─────────────────────────────────────────────────────── */
+  /* ── 5. Oakley HSTN ─────────────────────────────────────────────────────── */
   {
     id: 'oakley-hstn',
     name: 'HSTN',
     gen: 'Oakley',
     tagline: 'Estilo de vida ativo para o uso diário e esportes leves.',
     thumb: m('HSTN', 'Black clear', 'DM_20260320163451_001.WEBP'),
-    sizes: ['Standard'],
-    fits: ['High Bridge'],
-    price: '$ 191.94',
+    price: '$ 189.00',
     originalPrice: '$ 599.00',
     checkoutUrl: 'https://dailyman.shop/cart/53563801731399:1',
     colors: [
@@ -673,6 +420,6 @@ export const models: GlassesModel[] = [
   },
 ]
 
-export function getImageUrl(model: GlassesModel, colorIdx: number, _size: string): string {
+export function getImageUrl(model: GlassesModel, colorIdx: number): string {
   return model.colors[colorIdx]?.image ?? model.thumb
 }
