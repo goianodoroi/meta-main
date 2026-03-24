@@ -310,8 +310,8 @@ function ModelCard({ model, active, onClick }: {
 function isVideo(src: string) { return src.toLowerCase().endsWith('.mp4') }
 
 function getDiscountPercent(priceStr: string, originalPriceStr: string) {
-  const p = parseFloat(priceStr.replace(/[^0-9.]/g, ''))
-  const op = parseFloat(originalPriceStr.replace(/[^0-9.]/g, ''))
+  const p = parseFloat(priceStr.replace(/[^0-9.,]/g, '').replace(',', '.'))
+  const op = parseFloat(originalPriceStr.replace(/[^0-9.,]/g, '').replace(',', '.'))
   if (!p || !op || op <= p) return 0
   return Math.round((1 - p / op) * 100)
 }
