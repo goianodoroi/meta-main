@@ -38,7 +38,7 @@ export const models: GlassesModel[] = [
     thumb: m('Wayfarer (Gen 2)', 'Preto brilhante', '01.webp'),
     sizes: ['Standard', 'Large'],
     fits: ['High Bridge'],
-    price: '$ 147.90',
+    price: '$ 88,74',
     originalPrice: '$ 599.00',
     checkoutUrl: 'https://dailyman.shop/cart/53563801502023:1',
     colors: [
@@ -123,7 +123,7 @@ export const models: GlassesModel[] = [
     thumb: m('Wayfarer (Gen 1)', 'Preto brilhante', 'DM_20260320155948_001.WEBP'),
     sizes: ['Standard', 'Large'],
     fits: ['High Bridge'],
-    price: '$ 134.98',
+    price: '$ 80,99',
     originalPrice: '$ 599.00',
     checkoutUrl: 'https://dailyman.shop/cart/53563801534791:1',
     colors: [
@@ -213,7 +213,7 @@ export const models: GlassesModel[] = [
     thumb: m('Skyler Gen 2', 'Cinza-esbranquiçado brilhante', 'DM_20260320162858_001.WEBP'),
     sizes: ['Standard'],
     fits: ['High Bridge'],
-    price: '$ 199.90',
+    price: '$ 119,94',
     originalPrice: '$ 599.00',
     checkoutUrl: 'https://dailyman.shop/cart/53563801567559:1',
     colors: [
@@ -307,7 +307,7 @@ export const models: GlassesModel[] = [
     thumb: m('Skyler Gen 1', 'preto brilhante', 'DM_20260320162431_001.WEBP'),
     sizes: ['Standard'],
     fits: ['High Bridge'],
-    price: '$ 169.80',
+    price: '$ 101,88',
     originalPrice: '$ 599.00',
     checkoutUrl: 'https://dailyman.shop/cart/53563801600327:1',
     colors: [
@@ -388,7 +388,7 @@ export const models: GlassesModel[] = [
     thumb: m('Headliner (Gen 2)', 'Preto brilhante transparente a safira', 'DM_20260320161505_001.WEBP'),
     sizes: ['Standard', 'Large'],
     fits: ['High Bridge', 'Low Bridge'],
-    price: '$ 157.40',
+    price: '$ 94,44',
     originalPrice: '$ 599.00',
     checkoutUrl: 'https://dailyman.shop/cart/53563801633095:1',
     colors: [
@@ -469,7 +469,7 @@ export const models: GlassesModel[] = [
     thumb: m('Headliner (Gen 1)', 'Preto brilhante', 'DM_20260320160819_001.WEBP'),
     sizes: ['Standard'],
     fits: ['High Bridge', 'Low Bridge'],
-    price: '$ 153.90',
+    price: '$ 92,34',
     originalPrice: '$ 599.00',
     checkoutUrl: 'https://dailyman.shop/cart/53563801665863:1',
     colors: [
@@ -539,7 +539,7 @@ export const models: GlassesModel[] = [
     thumb: m('Vanguard', 'Prizm 24K', 'DM_20260320163950_001.WEBP'),
     sizes: ['Standard'],
     fits: ['High Bridge'],
-    price: '$ 299.90',
+    price: '$ 179,94',
     originalPrice: '$ 599.00',
     checkoutUrl: 'https://dailyman.shop/cart/53563801698631:1',
     colors: [
@@ -599,7 +599,7 @@ export const models: GlassesModel[] = [
     thumb: m('HSTN', 'Black clear', 'DM_20260320163451_001.WEBP'),
     sizes: ['Standard'],
     fits: ['High Bridge'],
-    price: '$ 319.90',
+    price: '$ 191,94',
     originalPrice: '$ 599.00',
     checkoutUrl: 'https://dailyman.shop/cart/53563801731399:1',
     colors: [
