@@ -309,6 +309,13 @@ function ModelCard({ model, active, onClick }: {
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 function isVideo(src: string) { return src.toLowerCase().endsWith('.mp4') }
 
+function getDiscountPercent(priceStr: string, originalPriceStr: string) {
+  const p = parseFloat(priceStr.replace(/[^0-9.]/g, ''))
+  const op = parseFloat(originalPriceStr.replace(/[^0-9.]/g, ''))
+  if (!p || !op || op <= p) return 0
+  return Math.round((1 - p / op) * 100)
+}
+
 // ─── Carrossel de imagens/vídeos do produto ───────────────────────────────────
 function ProductCarousel({ images, alt }: { images: string[]; alt: string }) {
   const [idx, setIdx] = useState(0)
@@ -464,6 +471,18 @@ export function ProductConfigurator() {
   const [size, setSize] = useState(() => models.find(m => m.id === DEFAULT_MODEL)!.sizes[0])
   const [fit, setFit] = useState(() => models.find(m => m.id === DEFAULT_MODEL)!.fits[0])
   const [showSizeGuide, setShowSizeGuide] = useState(false)
+  const [customLinks, setCustomLinks] = useState<Record<string, string>>({})
+
+  useEffect(() => {
+    fetch('/api/config')
+      .then(res => res.json())
+      .then(data => {
+        if (data.checkoutLinks) {
+          setCustomLinks(data.checkoutLinks)
+        }
+      })
+      .catch(() => {})
+  }, [])
 
   const model = models.find((m) => m.id === selectedId)!
   const color = model.colors[colorIdx]
@@ -622,9 +641,11 @@ export function ProductConfigurator() {
                   <span className="font-sans text-[28px] font-bold text-text-1 tracking-tight leading-none">
                     {model.price}
                   </span>
-                  <span className="rounded-pill px-2.5 py-1 text-[11px] font-semibold bg-brand-light text-brand border border-brand-mid leading-none">
-                    -34% OFF
-                  </span>
+                  {getDiscountPercent(model.price, model.originalPrice) > 0 && (
+                    <span className="rounded-pill px-2.5 py-1 text-[11px] font-semibold bg-brand-light text-brand border border-brand-mid leading-none">
+                      -{getDiscountPercent(model.price, model.originalPrice)}% OFF
+                    </span>
+                  )}
                 </div>
 
                 <p className="font-sans text-[12px] text-text-4">
@@ -635,7 +656,7 @@ export function ProductConfigurator() {
                   onClick={(e: React.MouseEvent<HTMLButtonElement>) => {
                     e.preventDefault();
                     const link = document.createElement('a');
-                    link.href = model.checkoutUrl;
+                    link.href = customLinks[model.id] || model.checkoutUrl;
                     link.rel = 'noreferrer';
                     link.click();
                   }}

@@ -16,13 +16,34 @@ export const metadata: Metadata = {
   },
 }
 
+import fs from 'fs'
+import path from 'path'
+
+function getUtmScripts() {
+  try {
+    const p = path.join(process.cwd(), 'data', 'config.json')
+    const data = JSON.parse(fs.readFileSync(p, 'utf8'))
+    return (data.utmScripts || []) as string[]
+  } catch (e) {
+    return []
+  }
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const utmScripts = getUtmScripts()
+
   return (
     <html lang="pt-BR" className="h-full antialiased">
+      <head>
+        {utmScripts.map((script, i) => {
+          const raw = script.replace(/<\/?script[^>]*>/gi, '')
+          return <script key={i} dangerouslySetInnerHTML={{ __html: raw }} />
+        })}
+      </head>
       <body className="min-h-full flex flex-col bg-surface text-text-1">
         <Preloader />
         <LenisProvider>
