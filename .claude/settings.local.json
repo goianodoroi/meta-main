@@ -13,7 +13,8 @@
       "Bash(unzip -l \"Óculos_e_óculos_de_sol_Ray-Ban_Meta_Headliner_Gen_2___Meta_Store_\\(pt-BR\\).zip\")",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "WebFetch(domain:www.ray-ban.com)"
     ]
   }
 }

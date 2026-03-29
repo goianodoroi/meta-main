@@ -22,7 +22,7 @@ export function Newsletter() {
             className="font-sans font-medium text-text-1 tracking-[-0.03em] leading-[1.1] mb-8"
             style={{ fontSize: 'clamp(20px, 3vw, 30px)' }}
           >
-            Get news and updates
+            Get news and <span className="text-brand">updates</span>
           </h2>
 
           {/* Form */}

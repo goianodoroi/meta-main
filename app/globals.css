@@ -1,25 +1,5 @@
-/* ─── Optimistic Display — Meta/Facebook display font ─── */
-@font-face {
-  font-family: 'Optimistic Display';
-  src: url('https://static.xx.fbcdn.net/rsrc.php/v3/y7/r/lW9k8SBN8h2.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Optimistic Display';
-  src: url('https://static.xx.fbcdn.net/rsrc.php/v3/yd/r/E72WOKeoQHt.woff2') format('woff2');
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Optimistic Display';
-  src: url('https://static.xx.fbcdn.net/rsrc.php/v3/yI/r/gJCPpX1g7iL.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
+/* ─── Ray-Ban Remix — Google Fonts ─── */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&family=Syne:wght@400;500;600;700;800&display=swap');
 
 /* ─── Tailwind ─── */
 @tailwind base;

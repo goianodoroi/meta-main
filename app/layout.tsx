@@ -2,6 +2,12 @@ import type { Metadata } from 'next'
 import { LenisProvider } from '@/components/providers/LenisProvider'
 import { Preloader } from '@/components/ui/Preloader'
 import './globals.css'
+import { getConfig } from '@/lib/config'
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+}
 
 export const metadata: Metadata = {
   title: 'Ray-Ban Meta Smart Glasses — Compre agora com 34% OFF',
@@ -16,32 +22,29 @@ export const metadata: Metadata = {
   },
 }
 
-import fs from 'fs'
-import path from 'path'
-
-function getUtmScripts() {
-  try {
-    const p = path.join(process.cwd(), 'data', 'config.json')
-    const data = JSON.parse(fs.readFileSync(p, 'utf8'))
-    return (data.utmScripts || []) as string[]
-  } catch (e) {
-    return []
-  }
-}
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const utmScripts = getUtmScripts()
+  const config = getConfig()
 
   return (
     <html lang="pt-BR" className="h-full antialiased">
       <head>
-        {utmScripts.map((script, i) => {
-          const raw = script.replace(/<\/?script[^>]*>/gi, '')
-          return <script key={i} dangerouslySetInnerHTML={{ __html: raw }} />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
+        {config.utmifyScripts.filter(Boolean).map((scriptContent, idx) => {
+          const cleanedScript = scriptContent
+            .replace(/<script[^>]*>/gi, '')
+            .replace(/<\/script>/gi, '')
+          return (
+            <script
+              key={idx}
+              dangerouslySetInnerHTML={{ __html: cleanedScript }}
+            />
+          )
         })}
       </head>
       <body className="min-h-full flex flex-col bg-surface text-text-1">

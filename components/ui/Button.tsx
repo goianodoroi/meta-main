@@ -38,8 +38,8 @@ export function Button({
       'hover:bg-brand-hover',
     ),
     secondary: cn(
-      'bg-white/25 backdrop-blur-md text-[#084DC4]',
-      'border border-[#E0E3E8]',
+      'bg-white/25 backdrop-blur-md text-brand',
+      'border border-[#D6D6D6]',
       'hover:bg-white/40',
       '[isolation:isolate] [will-change:transform]',
     ),

@@ -1,29 +1,22 @@
 import { NextResponse } from 'next/server'
-import fs from 'fs'
-import path from 'path'
-
-const CONFIG_PATH = path.join(process.cwd(), 'data', 'config.json')
-
-function loadConfig() {
-  try {
-    return JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf8'))
-  } catch(e) {
-    return { checkoutLinks: {}, utmScripts: [] }
-  }
-}
+import { getConfig, saveConfig } from '@/lib/config'
 
 export async function GET() {
-  return NextResponse.json(loadConfig())
+  const config = getConfig()
+  return NextResponse.json(config)
 }
 
-export async function POST(req: Request) {
+export async function POST(request: Request) {
   try {
-    const body = await req.json()
-    const dir = path.dirname(CONFIG_PATH)
-    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true })
-    fs.writeFileSync(CONFIG_PATH, JSON.stringify(body, null, 2), 'utf8')
-    return NextResponse.json({ success: true })
+    const data = await request.json()
+    const success = saveConfig(data)
+    
+    if (success) {
+      return NextResponse.json({ success: true })
+    } else {
+      return NextResponse.json({ success: false, error: 'Failed to write config' }, { status: 500 })
+    }
   } catch (error) {
-    return NextResponse.json({ error: String(error) }, { status: 500 })
+    return NextResponse.json({ success: false, error: 'Invalid payload' }, { status: 400 })
   }
 }

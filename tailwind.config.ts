@@ -9,34 +9,46 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        /* ── Ray-Ban brand ── */
         brand: {
-          DEFAULT: '#0457CB',
-          hover:   '#0348A8',
-          light:   '#EBF1FC',
-          mid:     '#C2D5F5',
+          DEFAULT: '#CC0000',
+          hover:   '#990000',
+          light:   '#FFF0F0',
+          mid:     '#FFCCCC',
         },
+        /* ── Surfaces (white theme) ── */
         surface: {
           DEFAULT: '#FFFFFF',
-          2:       '#F7F8FA',
-          3:       '#F0F2F5',
+          2:       '#F5F5F3',
+          3:       '#EBEBEB',
         },
+        /* ── Borders ── */
         border: {
-          DEFAULT: '#E4E6EB',
-          strong:  '#CDD0D4',
+          DEFAULT: '#D6D6D6',
+          strong:  '#BFBFBF',
         },
+        /* ── Text ── */
         text: {
-          1: '#050505',
-          2: '#3C3C3C',
-          3: '#65676B',
-          4: '#90949C',
+          1: '#1A1A1A',
+          2: '#4D4D4D',
+          3: '#8C8C8C',
+          4: '#BFBFBF',
         },
-        success: { DEFAULT: '#1E7E34', bg: '#EAF5EC' },
-        warning: { DEFAULT: '#A05E00', bg: '#FFF3E0' },
-        error:   { DEFAULT: '#C0392B', bg: '#FDECEA' },
+        /* ── Accent ── */
+        gold: {
+          DEFAULT: '#C9A84C',
+          light:   '#E8C97A',
+        },
+        /* ── Semantic ── */
+        success: { DEFAULT: '#2D6A4F', bg: '#EAF5EC' },
+        warning: { DEFAULT: '#B5451B', bg: '#FFF3E0' },
+        error:   { DEFAULT: '#CC0000', bg: '#FFF0F0' },
       },
       fontFamily: {
-        sans:    ["'Helvetica Neue'", 'Helvetica', 'Arial', 'sans-serif'],
-        display: ["'Optimistic Display'", "'Helvetica Neue'", 'Helvetica', 'Arial', 'sans-serif'],
+        sans:    ["'Syne'", "'Helvetica Neue'", 'Helvetica', 'Arial', 'sans-serif'],
+        display: ["'Bebas Neue'", "'Helvetica Neue'", 'Helvetica', 'Arial', 'sans-serif'],
+        serif:   ["'DM Serif Display'", 'Georgia', 'serif'],
+        mono:    ["'DM Mono'", 'ui-monospace', 'monospace'],
       },
       borderRadius: {
         '2':    '2px',
@@ -49,12 +61,12 @@ const config: Config = {
         'pill': '999px',
       },
       boxShadow: {
-        xs:    '0 1px 2px rgba(0,0,0,.05), 0 1px 3px rgba(0,0,0,.04)',
-        sm:    '0 2px 8px rgba(0,0,0,.07), 0 1px 3px rgba(0,0,0,.04)',
+        xs:    '0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.08)',
+        sm:    '0 4px 12px rgba(0,0,0,.15), 0 2px 4px rgba(0,0,0,.08)',
         md:    '0 4px 16px rgba(0,0,0,.08), 0 2px 6px rgba(0,0,0,.04)',
-        lg:    '0 8px 32px rgba(0,0,0,.10), 0 4px 10px rgba(0,0,0,.05)',
-        xl:    '0 16px 56px rgba(0,0,0,.12), 0 6px 16px rgba(0,0,0,.06)',
-        brand: '0 4px 16px rgba(4,87,203,.22)',
+        lg:    '0 12px 40px rgba(0,0,0,.18), 0 4px 12px rgba(0,0,0,.1)',
+        xl:    '0 24px 64px rgba(0,0,0,.22), 0 8px 24px rgba(0,0,0,.12)',
+        brand: '0 8px 32px rgba(204,0,0,0.35)',
       },
       transitionTimingFunction: {
         'ease-out-expo': 'cubic-bezier(0.16, 1, 0.3, 1)',
@@ -62,9 +74,9 @@ const config: Config = {
         'ease-std':      'cubic-bezier(0.4, 0, 0.2, 1)',
       },
       transitionDuration: {
-        fast: '120ms',
-        base: '240ms',
-        slow: '400ms',
+        fast: '150ms',
+        base: '300ms',
+        slow: '600ms',
       },
       keyframes: {
         fadeUp: {

@@ -1,10 +1,9 @@
 'use client'
 
 import { cn } from '@/lib/utils'
-import { DotLottieReact } from '@lottiefiles/dotlottie-react'
 
 const links = {
-  Product: ['Wayfarer', 'Headliner', 'Skyler', 'HSTN', 'Vanguard'],
+  Product: ['Wayfarer'],
   Support: ['Help Center', 'Return Policy', 'Warranty', 'Contact'],
   Legal: ['Privacy', 'Terms of Use', 'Cookies', 'Accessibility'],
 }
@@ -17,15 +16,14 @@ export function Footer() {
         {/* ── Top: Lottie + links ───────────────────────────────────────────── */}
         <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 lg:grid-cols-5 mb-10">
 
-          {/* Lottie */}
+          {/* Ray-Ban logo */}
           <div className="col-span-2 sm:col-span-4 lg:col-span-2 lg:pr-12 flex flex-col gap-4">
-            <div className="w-16 h-16">
-              <DotLottieReact
-                src="https://lottie.host/9de30d96-f415-4798-b466-a6f067888b73/QSLm9Tb4GN.lottie"
-                loop
-                autoplay
-              />
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Ray-Ban_logo.svg/1280px-Ray-Ban_logo.svg.png"
+              alt="Ray-Ban"
+              className="w-28 h-auto"
+            />
             <p className="font-sans text-[13px] text-text-3 leading-[1.7] max-w-xs">
               Ray-Ban x Meta - camera, audio and Meta AI integrated into the glasses you already wear.
             </p>
@@ -84,7 +82,7 @@ export function Footer() {
         {/* ── Copyright ────────────────────────────────────────────────────── */}
         <div className="border-t border-border pt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <p className="font-sans text-[12px] text-text-4">
-            ©2026 Meta.
+            ©2026 Ray-Ban.
           </p>
           <div className="flex items-center gap-4">
             {['Privacy', 'Cookies', 'Terms'].map((item) => (

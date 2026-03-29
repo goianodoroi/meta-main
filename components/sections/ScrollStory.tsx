@@ -130,7 +130,7 @@ export function ScrollStory() {
   const headingColor = useTransform(
     scrollYProgress,
     [0.4, 0.8],
-    ['#050505', '#0457CB'],
+    ['#1A1A1A', '#CC0000'],
   )
 
   return (
@@ -207,7 +207,7 @@ export function ScrollStory() {
           >
             Simple enough
             <br />
-            <span className="font-normal opacity-40">not to think.</span>
+            <span className="font-normal opacity-40">to not think about it.</span>
           </motion.h2>
 
           <div className="flex flex-col">
