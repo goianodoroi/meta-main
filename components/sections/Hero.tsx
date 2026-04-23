@@ -25,7 +25,7 @@ function MetaGlassesIcon() {
 }
 
 /* ── Componente ── */
-export function Hero() {
+export function Hero({ price = 'A$ 120.00', originalPrice = 'A$ 159.00' }: { price?: string; originalPrice?: string }) {
 
   return (
     <section
@@ -95,10 +95,10 @@ export function Hero() {
           {/* Price */}
           <div className="hero-item-3 flex items-center gap-3 flex-wrap">
             <span className="font-sans text-sm text-white/50 line-through leading-none">
-              $&nbsp;159.00
+              {originalPrice}
             </span>
             <span className="font-sans text-[32px] font-bold leading-none text-white tracking-tight">
-              $&nbsp;87.00
+              {price}
             </span>
             <span className="inline-flex items-center rounded-pill px-3 py-1 text-[11px] font-semibold bg-brand-light text-brand border border-brand-mid leading-none">
               -45% OFF

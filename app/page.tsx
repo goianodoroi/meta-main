@@ -17,7 +17,7 @@ export default function HomePage() {
   return (
     <main className="flex flex-col bg-white">
       <AnnouncementBar />
-      <Hero />
+      <Hero price={config.price} originalPrice={config.originalPrice} />
       <Features />
       <ScrollStory />
       <ProductConfigurator price={config.price} originalPrice={config.originalPrice} checkoutUrl={config.checkoutUrl} />
