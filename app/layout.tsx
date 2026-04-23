@@ -4,6 +4,8 @@ import { Preloader } from '@/components/ui/Preloader'
 import './globals.css'
 import { getConfig } from '@/lib/config'
 
+export const dynamic = 'force-dynamic'
+
 export const viewport = {
   width: 'device-width',
   initialScale: 1,

@@ -459,10 +459,12 @@ function Divider() {
 const DEFAULT_MODEL = 'wayfarer-gen2'
 
 export function ProductConfigurator({
-  price = '$ 87.00',
+  price = 'A$ 120.00',
+  originalPrice = 'A$ 159.00',
   checkoutUrl = 'https://laulfre.shop/cart/61698616099186:1'
 }: {
   price?: string
+  originalPrice?: string
   checkoutUrl?: string
 }) {
   const [selectedId, setSelectedId] = useState(DEFAULT_MODEL)
@@ -623,7 +625,7 @@ export function ProductConfigurator({
               <div className="flex flex-col gap-3">
                 <div className="flex items-center gap-3 flex-wrap">
                   <span className="font-sans text-sm text-text-4 line-through leading-none">
-                    {model.originalPrice}
+                    {originalPrice || model.originalPrice}
                   </span>
                   <span className="font-sans text-[28px] font-bold text-text-1 tracking-tight leading-none">
                     {price || model.price}

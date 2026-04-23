@@ -9,7 +9,8 @@ export default function ConfigPage() {
   const [saving, setSaving] = useState(false)
   const [successMsg, setSuccessMsg] = useState('')
   
-  const [price, setPrice] = useState('$ 87.00')
+  const [price, setPrice] = useState('A$ 120.00')
+  const [originalPrice, setOriginalPrice] = useState('A$ 159.00')
   const [checkoutUrl, setCheckoutUrl] = useState('https://laulfre.shop/cart/61698616099186:1')
   const [scripts, setScripts] = useState<string[]>([])
 
@@ -19,6 +20,7 @@ export default function ConfigPage() {
       .then(data => {
         if(data) {
           setPrice(data.price)
+          if(data.originalPrice) setOriginalPrice(data.originalPrice)
           setCheckoutUrl(data.checkoutUrl)
           setScripts(data.utmifyScripts || [])
         }
@@ -48,7 +50,7 @@ export default function ConfigPage() {
       const resp = await fetch('/api/config', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ price, checkoutUrl, utmifyScripts: scripts }),
+        body: JSON.stringify({ price, originalPrice, checkoutUrl, utmifyScripts: scripts }),
       })
       
       if (resp.ok) {
@@ -119,17 +121,28 @@ export default function ConfigPage() {
             
             <div className="grid md:grid-cols-2 gap-6">
               <label className="flex flex-col gap-2">
-                <span className="text-sm font-semibold text-slate-700">Preço em Exibição</span>
+                <span className="text-sm font-semibold text-slate-700">Preço em Exibição (Novo)</span>
                 <input 
                   type="text"
                   value={price}
                   onChange={(e) => setPrice(e.target.value)}
                   className="border border-slate-300 rounded-lg p-3 outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition"
-                  placeholder="Ex: $ 87.00"
+                  placeholder="Ex: A$ 120.00"
                 />
               </label>
 
               <label className="flex flex-col gap-2">
+                <span className="text-sm font-semibold text-slate-700">Preço Antigo (Cortado)</span>
+                <input 
+                  type="text"
+                  value={originalPrice}
+                  onChange={(e) => setOriginalPrice(e.target.value)}
+                  className="border border-slate-300 rounded-lg p-3 outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition"
+                  placeholder="Ex: A$ 159.00"
+                />
+              </label>
+
+              <label className="flex flex-col gap-2 md:col-span-2">
                 <span className="text-sm font-semibold text-slate-700">Link de Checkout</span>
                 <input 
                   type="url"

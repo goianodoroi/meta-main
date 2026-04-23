@@ -9,6 +9,8 @@ import { Newsletter } from '@/components/sections/Newsletter'
 import { Footer } from '@/components/sections/Footer'
 import { getConfig } from '@/lib/config'
 
+export const dynamic = 'force-dynamic'
+
 export default function HomePage() {
   const config = getConfig()
 
@@ -18,7 +20,7 @@ export default function HomePage() {
       <Hero />
       <Features />
       <ScrollStory />
-      <ProductConfigurator price={config.price} checkoutUrl={config.checkoutUrl} />
+      <ProductConfigurator price={config.price} originalPrice={config.originalPrice} checkoutUrl={config.checkoutUrl} />
       <ProductDetails />
       <FAQ />
       <Newsletter />

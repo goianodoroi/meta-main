@@ -3,12 +3,14 @@ import path from 'path'
 
 export interface AppConfig {
   price: string
+  originalPrice: string
   checkoutUrl: string
   utmifyScripts: string[]
 }
 
 const DEFAULT_CONFIG: AppConfig = {
-  price: '$ 87.00',
+  price: 'A$ 120.00',
+  originalPrice: 'A$ 159.00',
   checkoutUrl: 'https://laulfre.shop/cart/61698616099186:1',
   utmifyScripts: []
 }
